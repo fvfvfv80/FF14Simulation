@@ -1,14 +1,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class User : MonoBehaviour
+//예정
+public class JobClass
+{
+    protected string Name;
+
+}
+
+public class Healer: JobClass
 {
 
+}
+//
+
+public class User : MonoBehaviour
+{
+    protected Transform _body;
     private CircleCollider2D _bodyCollider;
 
 
     public float Speed = 3f;
-
+    public string Name;
+    public JobClass Job;
 
     //이것도 클래스화 시키는게 맞나?
     // 버프당 스택은 해당 버프에서 관리?
@@ -23,21 +37,22 @@ public class User : MonoBehaviour
 
     protected void Update()
     {
-       
+
         foreach (var state in BuffList)
         {
             Debug.Log(state.Key);
             state.Value.UpdateAction();
-            
+
         }
+        
+       
 
 
     }
-    public void Init()
+    private void Init()
     {
-        Transform _body = transform.Find("_body");
+        _body = transform.Find("_body");
         _bodyCollider = _body.GetComponent<CircleCollider2D>();
-
 
     }
 
