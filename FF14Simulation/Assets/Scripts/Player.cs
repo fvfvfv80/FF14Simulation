@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : User
 {
-     
 
+    public Vector2 Fowrad;
 
     private void Start()
     {
@@ -40,14 +40,16 @@ public class Player : User
     }
     private void Movment()
     {
-        float inputX = Input.GetAxis("Vertical");
-        float inputY = Input.GetAxis("Horizontal");
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+        
         float curSpeed = Speed;
-        if (inputX * inputX + inputY * inputY > 1)
-            curSpeed = Speed/1.141f;
+
+        Fowrad = new Vector2(inputX, inputY);
+
    
-        transform.Translate(new Vector2(0, inputX) * curSpeed * Time.deltaTime);
-        transform.Translate(new Vector2(inputY, 0) * curSpeed * Time.deltaTime);
+        transform.Translate(Fowrad * curSpeed * Time.deltaTime);
+       
 
 
     }

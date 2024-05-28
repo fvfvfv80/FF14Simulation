@@ -37,12 +37,19 @@ public class User : MonoBehaviour
 
     protected void Update()
     {
-
+        List<string> removeList = new List<string>();
         foreach (var state in BuffList)
         {
             Debug.Log(state.Key);
-            state.Value.UpdateAction();
+            
+            string str = state.Value.UpdateAction();
+            if(str!="")
+                removeList.Add(str);
 
+        }
+        foreach(var str in removeList)
+        {
+            BuffList.Remove(str);
         }
         
        

@@ -21,7 +21,7 @@ public class UserState
     public virtual void ActionEnd() { }
 
 
-    public void UpdateAction()
+    public string UpdateAction()
     {
         if (_time > 0)
         {
@@ -34,10 +34,12 @@ public class UserState
             Debug.Log(this + " FINISH");
 
             //콜백??디스트로이 하면 리스트에서 자동으로 사라진다는 행복한 상상중
-            _user.BuffList.Remove(Name);
-
+            //_user.BuffList.Remove(Name);
+            return Name;
         }
         _time -= Time.deltaTime;
         Debug.Log(this + " Left: " + _time);
+
+        return "";
     }
 }
