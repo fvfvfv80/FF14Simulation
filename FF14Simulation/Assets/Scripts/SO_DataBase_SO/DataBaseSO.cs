@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 //[CreateAssetMenu(fileName = "SODataBase", menuName = "Scriptable Objects/SODataBase_")]
-public abstract class SODataBase<T> : ScriptableObject where T : DBData
+public abstract class DataBaseSO<T> : ScriptableObject where T : DBData
 {
     public bool DoTest;
 
@@ -22,13 +22,12 @@ public abstract class SODataBase<T> : ScriptableObject where T : DBData
 
     public void ParseJsonData()
     {
-        if(!DoTest)
+        if (!DoTest)
         {
             Debug.Log(this.name + " parseData");
             string jsonContent;
             //jsonContent = File.ReadAllText(JsonPath);
-            jsonContent=JsonFile.ToString();
-            Debug.Log(jsonContent);
+            jsonContent = JsonFile.ToString();
 
             DataInit(jsonContent);
 
@@ -39,6 +38,6 @@ public abstract class SODataBase<T> : ScriptableObject where T : DBData
     public abstract void DataInit(string jContent);
 
 
-    
+
 
 }

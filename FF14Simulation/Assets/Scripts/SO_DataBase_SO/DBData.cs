@@ -12,7 +12,7 @@ public class DBData
 [Serializable]
 public class TimelineData : DBData
 {
-    
+
     public int GroupId;
     public int StartTime;
 
