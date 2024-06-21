@@ -36,6 +36,7 @@ public class User
 
     private void AddUserBuff(Dictionary<string, UserBuff> list , UserBuff buff)
     {
+
         list.Add(buff.Name, buff);
         
         buff.ActionBegin();
@@ -53,7 +54,7 @@ public class User
 
 
 
-    public void BuffUpdate()
+    public void BuffUpdate(float deltaTime)
     {
         foreach(var list in _userBuffLists)
         {
@@ -62,7 +63,7 @@ public class User
             {
                 
 
-                string str = state.Value.UpdateAction();
+                string str = state.Value.UpdateAction(deltaTime);
                 if (str != "")
                     removeList.Add(str);
 

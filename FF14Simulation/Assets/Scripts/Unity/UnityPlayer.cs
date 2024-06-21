@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class UnityPlayer : UnityUser
 {
@@ -17,7 +16,7 @@ public class UnityPlayer : UnityUser
     protected override void UnityInit()
     {
         base.UnityInit();
-        bodyCollider = body.GetComponent<CircleCollider2D>();
+        bodyCollider = _body.GetComponent<CircleCollider2D>();
     }
 
     protected void Start()
@@ -59,4 +58,10 @@ public class UnityPlayer : UnityUser
             Debug.Log("startRun");
         }
     }
+
+    public void GetAttacked(float Damage)
+    {
+
+    }
+
 }

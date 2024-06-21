@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 public abstract class UserBuff
 {
-   // public static Dictionary<string, UserBuff> UserBuffs;
+    public static Dictionary<string, UserBuff> UserBuffs;
     private float time;
 
     protected User user;
@@ -21,7 +20,7 @@ public abstract class UserBuff
     public virtual void ActionEnd() { }
 
 
-    public string UpdateAction()
+    public string UpdateAction(float deltaTime)
     {
         if (time > 0)
         {
@@ -31,13 +30,14 @@ public abstract class UserBuff
         {
             ActionEnd();
 
-            Debug.Log(this + " FINISH");
+          
 
             return Name;
         }
-        time -= Time.deltaTime;
-        Debug.Log(this + " Left: " + time);
+        time -= deltaTime;
+       
 
         return "";
     }
+
 }

@@ -4,8 +4,8 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class UnityUser : MonoBehaviour
 {
-    protected User user;
-    protected Transform body;
+    public User user;
+    protected Transform _body;
 
    
 
@@ -23,7 +23,7 @@ public class UnityUser : MonoBehaviour
     //For Gruop
     protected virtual void UnityInit()
     {
-        body = transform.Find("_body");
+        _body = transform.Find("_body");
     }
 
     protected void Start()
@@ -37,6 +37,6 @@ public class UnityUser : MonoBehaviour
 
     protected void Update()
     {
-        user.BuffUpdate();
+        user.BuffUpdate(Time.deltaTime);
     }
 }

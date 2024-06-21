@@ -15,23 +15,39 @@ MonoBehaviour:
   DoTest: 0
   JsonFile: {fileID: 4900000, guid: 04d86912fee6292438b68a6bfd5aa9f4, type: 3}
   DataList:
-  - id: 1
+  - Id: 1
     name: "\uAE30\uBBF91"
     GroupId: 0
-    StartTime: 0
-  - id: 2
+    CastStartTime: 0
+    CastEndTime: 0
+    EnemyPatternType: AOE
+    EnemyPatternID: 0
+    TargetType: 0
+    TargetVal: 0
+  - Id: 2
     name: "\uAE30\uBBF92"
     GroupId: 0
-    StartTime: 0
-  - id: 3
+    CastStartTime: 0
+    CastEndTime: 0
+    EnemyPatternType: AOE
+    EnemyPatternID: 0
+    TargetType: 0
+    TargetVal: 0
+  - Id: 3
     name: "\uAE30\uBBF93"
     GroupId: 0
-    StartTime: 0
-  - id: 4
+    CastStartTime: 0
+    CastEndTime: 0
+    EnemyPatternType: AOE
+    EnemyPatternID: 0
+    TargetType: 0
+    TargetVal: 0
+  - Id: 4
     name: "\uAE30\uBBF94"
     GroupId: 0
-    StartTime: 0
-  - id: 5
-    name: "\uAE30\uBBF95"
-    GroupId: 0
-    StartTime: 0
+    CastStartTime: 0
+    CastEndTime: 0
+    EnemyPatternType: AOE
+    EnemyPatternID: 0
+    TargetType: 0
+    TargetVal: 0
